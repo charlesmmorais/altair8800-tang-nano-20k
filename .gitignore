@@ -1,0 +1,11 @@
+# Gowin EDA
+impl/
+*.gprj.user
+.gwproj/
+
+# Simulação
+*.vvp
+*.vcd
+
+# Python
+__pycache__/

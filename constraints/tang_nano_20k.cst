@@ -1,0 +1,45 @@
+// ============================================================================
+// tang_nano_20k.cst - Constraints fisicos (Gowin EDA)
+// Placa: Sipeed Tang Nano 20K  -  GW2AR-LV18QN88C8/I7
+//
+// ATENCAO: confira os pinos contra o esquematico da revisao da sua placa
+// antes de gravar. Os pinos do painel (73..85) sao do conector de expansao.
+// ============================================================================
+
+IO_LOC "clk27" 4;
+IO_PORT "clk27" PULL_MODE=UP;
+
+// Botao S1 (reset)
+IO_LOC "btn_rst_n" 88;
+IO_PORT "btn_rst_n" PULL_MODE=UP;
+
+// UART do BL616 (console USB)
+IO_LOC "uart_txp" 69;
+IO_LOC "uart_rxp" 70;
+IO_PORT "uart_rxp" PULL_MODE=UP;
+
+// LEDs onboard (ativo baixo)
+IO_LOC "led_ob[0]" 15;
+IO_LOC "led_ob[1]" 16;
+IO_LOC "led_ob[2]" 17;
+IO_LOC "led_ob[3]" 18;
+IO_LOC "led_ob[4]" 19;
+IO_LOC "led_ob[5]" 20;
+
+// Painel frontal - cadeia de 74HC595 (LEDs)
+IO_LOC "led_sclk" 73;
+IO_LOC "led_sdat" 74;
+IO_LOC "led_rclk" 75;
+
+// Painel frontal - cadeia de 74HC165 (chaves)
+IO_LOC "sw_sclk" 76;
+IO_LOC "sw_pln"  80;
+IO_LOC "sw_sdat" 85;
+IO_PORT "sw_sdat" PULL_MODE=DOWN;   // permite operar sem o painel conectado
+
+// Todos os pinos de E/S do painel em 3.3V LVCMOS33
+IO_PORT "led_sclk" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "led_sdat" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "led_rclk" IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "sw_sclk"  IO_TYPE=LVCMOS33 DRIVE=8;
+IO_PORT "sw_pln"   IO_TYPE=LVCMOS33 DRIVE=8;

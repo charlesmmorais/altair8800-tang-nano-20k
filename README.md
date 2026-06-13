@@ -1,4 +1,4 @@
-# Altair 8800 — Tang Nano 20K
+# Altair 8800 - Tang Nano 20K
 
 Réplica funcional do **MITS Altair 8800 (1975)** em Verilog para a Sipeed
 Tang Nano 20K, com núcleo Intel 8080 completo, 64 KB de RAM, console
@@ -10,7 +10,7 @@ apenas 6 fios, via shift registers 74HC595/74HC165.
   <img src="docs/img/block_diagram.svg" alt="Diagrama de blocos: i8080, RAM 64 KB, 88-2SIO, FSM do painel e serializadores 595/165" width="760">
 </p>
 
-> Liga já rodando o **Kill the Bit** — o painel é opcional, mas é onde
+> Liga já rodando o **Kill the Bit** - o painel é opcional, mas é onde
 > mora a diversão.
 
 ## Destaques
@@ -20,7 +20,7 @@ apenas 6 fios, via shift registers 74HC595/74HC165.
   autoteste em simulação.
 - **64 KB de RAM** inteiros em BSRAM, conteúdo embarcado no bitstream
   (`boot.hex`).
-- **88-2SIO** nas portas `10h`/`11h` → USB-C da placa, 115200 8N1 —
+- **88-2SIO** nas portas `10h`/`11h` → USB-C da placa, 115200 8N1 -
   compatível com o Altair BASIC.
 - **Sense switches** na porta `FFh` (chaves A15..A8), como no original.
 - **Painel frontal completo**: STOP, RUN, SINGLE STEP, EXAMINE/NEXT,
@@ -94,16 +94,16 @@ painel simulado).
 
 ## Limitações conhecidas
 
-- Sem interrupções (EI/DI/INTE existem; nenhum dispositivo interrompe —
+- Sem interrupções (EI/DI/INTE existem; nenhum dispositivo interrompe -
   BASIC e os clássicos rodam por polling normalmente).
 - PROTECT/UNPROTECT e CLR não implementados.
 - Temporização simplificada (2 clocks/ciclo de máquina): laços de atraso
   calibrados ficam levemente fora do tempo real.
-- O binário do Altair BASIC não está incluído (direitos autorais) — use
+- O binário do Altair BASIC não está incluído (direitos autorais) - use
   `sw/make_boot.py` com uma imagem obtida à parte.
 
 ## Licença
 
-Distribuído sob a licença **MIT** — veja [LICENSE](LICENSE).
+Distribuído sob a licença **MIT** - veja [LICENSE](LICENSE).
 "Altair 8800" é marca histórica da MITS; este projeto é uma homenagem
 educacional sem afiliação.
